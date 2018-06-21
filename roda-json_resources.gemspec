@@ -5,7 +5,7 @@ Gem::Specification.new do |spec|
   spec.authors      = ['Chris Frank']
   spec.email        = ['chris.frank@thefutureproject.org']
 
-  spec.summary      = 'A plugin for Roda to handle CRUD actions via JSON'
+  spec.summary      = 'A plugin for Roda to respond to CRUD actions with JSON'
   spec.description  = spec.summary
   spec.homepage     = 'https://github.com/chrisfrank/roda-json_resources'
   spec.license      = 'MIT'
