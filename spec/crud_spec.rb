@@ -28,7 +28,7 @@ describe 'CRUD actions' do
 
   describe 'GET => /:id' do
     it 'reads a record' do
-      get('/1') { |res| expect(res.body).to eq({ id: 1 }.to_json) }
+      get('/1') { |res| expect(res.body).to eq({ id: '1' }.to_json) }
     end
   end
 

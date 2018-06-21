@@ -48,7 +48,7 @@ class Roda
             end
           end
 
-          is Integer do |id|
+          is String do |id|
             @record = model.first(id: id) || halt(404)
 
             actions[:read] && get { decorator.new(@record) }
