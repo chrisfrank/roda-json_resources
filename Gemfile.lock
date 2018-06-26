@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    roda-json_resources (0.1.0)
+    roda-json_resources (0.1.1)
       multi_json (~> 1)
       rack-reducer (~> 0)
       roar (~> 1)

@@ -12,7 +12,12 @@ describe 'CRUD actions' do
       end
 
       route do |r|
-        r.crud TestModel, decorator: TestDecorator, actions: [:read, :update]
+        options = { decorator: TestDecorator, actions: [:read, :update] }
+        r.crud TestModel, options do |model|
+          r.get 'custom' do
+            model.class.to_s
+          end
+        end
       end
     end
   end
@@ -20,6 +25,12 @@ describe 'CRUD actions' do
   describe 'POST => /' do
     it '404s' do
       post('/') { |res| expect(res.status).to eq(404) }
+    end
+  end
+
+  describe 'GET => /:id/custom' do
+    it 'handles a custom action' do
+      get('/1/custom') { |res| expect(res.body).to eq('TestModel') }
     end
   end
 
@@ -42,4 +53,5 @@ describe 'CRUD actions' do
       delete('/1') { |res| expect(res.status).to eq(404) }
     end
   end
+
 end
