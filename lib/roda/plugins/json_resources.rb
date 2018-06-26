@@ -32,11 +32,11 @@ class Roda
           instance_exec(model, decorator, actions_enabled, block, &CrudHandler)
         end
 
-        def index(model, decorator:, filters:)
+        def index(model, decorator:, filters:, options: {})
           root do
             decorator.for_collection.new(
               Rack::Reducer.call(params, dataset: model, filters: filters)
-            )
+            ).to_json(options)
           end
         end
 

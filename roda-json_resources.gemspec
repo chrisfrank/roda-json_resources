@@ -1,7 +1,7 @@
 # coding: utf-8
 Gem::Specification.new do |spec|
   spec.name         = 'roda-json_resources'
-  spec.version      = '0.2.1'
+  spec.version      = '0.2.2'
   spec.authors      = ['Chris Frank']
   spec.email        = ['chris.frank@thefutureproject.org']
 
